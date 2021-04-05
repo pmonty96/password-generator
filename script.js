@@ -25,10 +25,10 @@ var passwordIndex = -1;
 
 document.getElementById("generate").addEventListener("click",  function main() {
   passwordLength = Number(prompt("How many characters long? Must be between 8 and 128"))
-    while ((passwordLength < 8) || (passwordLength > 128)) {
+    while ((passwordLength < 8) || (passwordLength > 128) || (passwordLength === "NaN") || (passwordLength === "null") || passwordLength === undefined){
       passwordLength = Number(prompt("Please enter a number between 8 and 128"))
     }
-    
+    console.log(passwordLength)
     while (countTypes == 0)  {
       var upper = confirm("Use upper case characters?");
       var lower = confirm("Use lower case characters?");
